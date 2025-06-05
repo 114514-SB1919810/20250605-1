@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>期末報告</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #f4f4f4;
+    }
+
+    /* 封面區塊 */
+    .cover {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #ffb0c1;
+      padding: 40px;
+      box-sizing: border-box;
+      flex-direction: column;
+    }
+
+    .cover-content {
+      text-align: center;
+      padding: 0;
+      border-radius: 15px;
+      box-shadow: none;
+      background: #f4f4f4;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .cover h1 {
+      font-size: 3em;
+      color: #d6336c;
+      margin-bottom: 24px;
+    }
+
+    .shadow-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto 30px auto;
+    }
+
+    .shadow-img:hover {
+      transform: scale(1.02);
+    }
+
+
+    .line {
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  cursor: pointer;
+  padding: 16px;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1002;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.15);
+}
+
+.line .menu {
+  position: relative;
+  top: 0;
+  height: 2px;
+  background: #222;
+  width: 20px;
+  margin: 0 auto;
+}
+
+.line .menu::before,
+.line .menu::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background: #222;
+  left: 0;
+}
+
+.line .menu::before {
+  top: -8px;
+}
+
+.line .menu::after {
+  top: 8px;
+}
+
+
+    #menu:checked + .line .menu {
+      background: transparent;
+    }
+
+    #menu:checked + .line .menu::before {
+      transform: rotate(45deg);
+      top: 0;
+    }
+
+    #menu:checked + .line .menu::after {
+      transform: rotate(-45deg);
+      top: 0;
+    }
+
+    #menu:checked + .line .menu::before,
+    #menu:checked + .line .menu::after {
+      transition: top ease 0.15s, transform ease 0.15s 0.15s;
+    }
+
+    /* 選單列表：桌面版 */
+    .menu-list {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      position: static;
+      background: transparent;
+      box-shadow: none;
+      padding: 0;
+      width: 100%;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      z-index: 1;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .menu-list ul {
+      display: flex;
+      gap: 15px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .menu-list ul li {
+      display: inline-block;
+      font-weight: 600;
+      color: #444;
+      white-space: nowrap;
+    }
+
+    .menu-list ul li a {
+      text-decoration: none;
+      color: #d6336c;
+      font-weight: normal;
+      transition: color 0.3s ease;
+    }
+
+    .menu-list ul li a:hover {
+      color: #a31f4a;
+    }
+
+
+    @media screen and (max-width: 768px) {
+      .line {
+        display: block;
+      }
+
+
+      .menu-list {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 100vh;
+        background: #fff;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        padding-top: 80px;
+        z-index: 1000;
+        overflow-y: auto;
+      }
+
+
+      #menu:checked ~ .menu-list {
+        display: flex;
+      }
+
+      .menu-list ul {
+        flex-direction: column;
+        margin-left: 30px;
+        gap: 12px;
+      }
+
+      .menu-list ul li {
+        width: auto;
+        font-weight: 600;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <nav class="nav-box">
+    <input type="checkbox" id="menu" />
+    <label for="menu" class="line">
+      <div class="menu"></div>
+    </label>
+
+    <div class="menu-list">
+      <ul>
+        <li>html5:</li>
+        <li><a href="https://114514-sb1919810.github.io/666/Untitled-1.html">算了css也是html</a></li>
+        <li><a href="https://114514-sb1919810.github.io/854185/Untitled-1.html">背景圖重疊</a></li>
+        <li>css:</li>
+        <li><a href="https://114514-sb1919810.github.io/-2/7.html">圖中文</a></li>
+        <li><a href="https://114514-sb1919810.github.io/qzhonka/QZK%20IS%20GUI.html">期中考混飯吃的</a></li>
+        <li>javascript:</li>
+        <li><a href="https://114514-sb1919810.github.io/20250508/1.html">文字設計過長</a></li>
+        <li><a href="https://114514-sb1919810.github.io/20250528-1/4.html">花卉介紹</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="cover">
+    <div class="cover-content">
+      <h1>期末報告</h1>
+      <img src="400edb6260b84909bbcd191471a36478.gif" alt="貓" class="shadow-img" />
+    </div>
+  </div>  
+
+
+
+</body>
+</html>
